@@ -129,12 +129,35 @@
 }
 
 .input-text {
+    width: 100%;
     border: none;
     background-color: #F0F0F0;
     padding: 10px 16px;
     border-radius: 5px;
 }
 
+::placeholder {
+    color: #8E8E8E;
+    opacity: 1; /* Firefox */
+  }
+
 .container-form {
-    width: 500px;
+    width: 300px;
+}
+
+.form-select {
+    border: none;
+    background-color: #F0F0F0;
+    padding: 10px 16px;
+    border-radius: 5px;
+    color: #8E8E8E;
+}
+
+.btn-save {
+    width: 100%;
+    border: none;
+    background-color: #0085FF;
+    padding: 10px 16px;
+    border-radius: 5px;
+    color: #FBFBFC;
 }
