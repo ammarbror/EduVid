@@ -71,20 +71,25 @@
                 103.233 <span>user</span>
               </p>
             </div>
-            <!-- card sembuh -->
+            <!-- card data covid -->
             <div class="card-summary ps-3 pe-5 pt-3 ms-3">
-              <h6 class="title-card">Total Data</h6>
+              <h6 class="title-card">Total Data Covid</h6>
               <p class="count-data" style="color: #44a44e">
                 103.233 <span>data</span>
               </p>
             </div>
-            <!-- card meninggal -->
-            <div class="card-summary ps-3 pe-5 pt-3 ms-3">
-              <h6 class="title-card">Total Positif</h6>
-              <p class="count-data" style="color: #e42e2e">
-                103.233 <span>kasus</span>
-              </p>
-            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="mt-5 px-3 py-3 shadow rounded-3" >
+            <h5>Total User</h5>
+            <hr class="divider" />
+            <canvas id="chartTotalUser"></canvas>
+          </div>
+          <div class="mt-5 px-3 py-3 shadow rounded-3">
+            <h5>Total Data Covid</h5>
+            <hr class="divider" />
+            <canvas id="totalDataCovid"></canvas>
           </div>
         </div>
       </div>
@@ -96,8 +101,86 @@
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="./js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+  <script>
+    showTotalUserChart();
+    showTotalDataCovidChart();
+
+
+    function showTotalUserChart() {
+      // Setup
+      const labels = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Agu',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Des'
+      ];
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Total User',
+          backgroundColor: 'rgb(0, 133, 255)',
+          data: [3, 12, 14, 21, 22, 28, 30, 32, 34, 40, 50, 52],
+        }]
+      };
+      // Config
+      const config = {
+        type: 'bar',
+        data,
+        options: {}
+      };
+      var totalUserChart = new Chart(
+        document.getElementById('chartTotalUser'),
+        config
+      );
+    }
+
+    function showTotalDataCovidChart() {
+      // Setup
+      const labels = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Agu',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Des'
+      ];
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Total Data Covid',
+          backgroundColor: 'rgb(68, 164, 78)',
+          data: [3, 12, 14, 21, 22, 28, 30, 32, 34, 40, 50, 52],
+        }]
+      };
+      // Config
+      const config = {
+        type: 'bar',
+        data,
+        options: {}
+      };
+      var totalDataCovid = new Chart(
+        document.getElementById('totalDataCovid'),
+        config
+      );
+    }
+
+  </script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
